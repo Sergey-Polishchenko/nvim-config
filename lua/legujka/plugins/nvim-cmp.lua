@@ -4,6 +4,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    "Snikimonkd/cmp-go-pkgs",
   },
   config = function()
     local cmp = require("cmp")
@@ -44,8 +45,12 @@ return {
         { name = "luasnip" },
         { name = "buffer" },
         { name = 'path', option = { trailing_slash = true } },
+        { name = "go_pkgs" },
       },
-        completion = {
+      matching = {
+        disallow_symbol_nonprefix_matching = false
+      },
+      completion = {
         autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged },
       },
       window = {
