@@ -47,9 +47,20 @@ vim.api.nvim_create_autocmd(
     pattern = "*",
     callback = function()
       if vim.bo.modified and vim.bo.filetype ~= "nofile" and vim.fn.getbufvar('%', '&modifiable') == 1 then
-        vim.cmd("write")
+        if vim.bo.buftype == "" then
+          vim.cmd("silent! write")
+        end
       end
     end,
   }
 )
 
+-- quit with save ignoring buffers like terminal
+vim.api.nvim_create_user_command('Quit', function(opts)
+  if opts.bang then
+    vim.cmd('wall')
+    vim.cmd('qa!')
+  else
+    vim.cmd('qa')
+  end
+end, { bang = true })
