@@ -33,7 +33,7 @@ lspconfig.dockerls.setup {
 lspconfig.yamlls.setup {
   cmd = { "yaml-language-server", "--stdio" },
   filetypes = { "yaml", "yml" },
-  root_dir = util.root_pattern("docker-compose.yml", ".git"),
+  root_dir = util.root_pattern("docker-compose.yml", "Taskfile.yml", ".git"),
   on_attach = function(client, bufnr)
     on_attach(client, bufnr, {
       { mode = "n", key = "K", cmd = vim.lsp.buf.hover },
@@ -43,6 +43,7 @@ lspconfig.yamlls.setup {
     yaml = {
       schemas = {
         ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose*.yml",
+        ["https://taskfile.dev/schema.json"] = "Taskfile*.yml",
       },
     },
   },

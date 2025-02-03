@@ -77,11 +77,13 @@ end
 vim.api.nvim_set_keymap("n", "<leader>im", [[<cmd>lua require("telescope").extensions.goimpl.goimpl{}<CR>]], opts)
 
 -- GoTest
-vim.api.nvim_set_keymap('n', "<leader>gtf", [[<cmd>GoAddTest<CR>]], opts)
-vim.api.nvim_set_keymap('n', "<leader>gta", [[<cmd>GoAddAllTest<CR>]], opts)
+vim.api.nvim_set_keymap("n", "<leader>gtf", [[<cmd>GoAddTest<CR>]], opts)
+vim.api.nvim_set_keymap("n", "<leader>gta", [[<cmd>GoAddAllTest<CR>]], opts)
 
-vim.api.nvim_set_keymap('n', "<leader>gtr", [[<cmd>GoTest<CR>]], opts)
+vim.api.nvim_set_keymap("n", "<leader>gtr", [[<cmd>GoTest<CR>]], opts)
 
+-- Markdown
+vim.api.nvim_set_keymap("n", "<leader>md", [[<cmd>RenderMarkdown toggle<CR>]], opts)
 
 -- Настраиваем ключи при подключении LSP
 vim.api.nvim_create_autocmd(
