@@ -82,6 +82,9 @@ vim.api.nvim_set_keymap("n", "<leader>gta", [[<cmd>GoAddAllTest<CR>]], opts)
 
 vim.api.nvim_set_keymap("n", "<leader>gtr", [[<cmd>GoTest<CR>]], opts)
 
+-- GoDoc
+vim.api.nvim_set_keymap("n", "<leader>gd", [[<cmd>GoDoc<CR>]], opts)
+
 -- Markdown
 vim.api.nvim_set_keymap("n", "<leader>md", [[<cmd>RenderMarkdown toggle<CR>]], opts)
 
