@@ -88,7 +88,7 @@ vim.api.nvim_set_keymap("n", "<leader>gd", [[<cmd>GoDoc<CR>]], opts)
 -- Markdown
 vim.api.nvim_set_keymap("n", "<leader>md", [[<cmd>RenderMarkdown toggle<CR>]], opts)
 
--- Настраиваем ключи при подключении LSP
+-- LSP
 vim.api.nvim_create_autocmd(
   "LspAttach",
   {
@@ -97,3 +97,4 @@ vim.api.nvim_create_autocmd(
     end,
   }
 )
+
